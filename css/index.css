@@ -1,0 +1,98 @@
+        :root {
+            --bg-deep-blue: #0a192f;
+            --bg-light-blue: #172a45;
+            --border-blue: #233554;
+            --accent-blue: #3A86FF;
+            --accent-cyan: #64ffda;
+            --text-light: #ccd6f6;
+            --text-darker: #8892b0;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: var(--bg-deep-blue);
+            color: var(--text-light);
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+            image-rendering: pixelated;
+        }
+        
+        /* Efeito de Scanlines (tela CRT) */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.2) 0px,
+                rgba(0, 0, 0, 0.2) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Container principal com borda pixelada */
+        .pixel-screen {
+            border: 6px solid var(--border-blue);
+            box-shadow: 
+                inset 0 0 0 4px var(--bg-deep-blue),
+                0 0 0 4px var(--border-blue);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            background-color: var(--bg-deep-blue);
+        }
+        
+        /* Botão 3D Aprimorado */
+        .btn-3d {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent-cyan);
+            border: 2px solid var(--accent-cyan);
+            padding: 12px 20px;
+            text-shadow: none;
+            transition: all 0.15s ease-out;
+            transform: translate(0, 0);
+            box-shadow: 4px 4px 0 0 var(--accent-blue);
+        }
+        .btn-3d:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            box-shadow: 2px 2px 0 0 var(--accent-blue);
+            transform: translate(2px, 2px);
+        }
+        .btn-3d:active {
+            box-shadow: 0 0 0 0 var(--accent-blue);
+            transform: translate(4px, 4px);
+        }
+        
+        /* Card com estilo de janela UI */
+        .card-window {
+             background-color: var(--bg-light-blue);
+             border: 4px solid var(--border-blue);
+             transition: all 0.2s ease-in-out;
+             position: relative;
+        }
+        .card-window:hover {
+            border-color: var(--accent-cyan);
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 0 var(--border-blue);
+        }
+
+        /* Títulos de seção */
+        .section-title {
+            color: var(--accent-cyan);
+            text-shadow: 2px 2px 0px var(--accent-blue);
+        }
+
+        /* Ícones Pixel Art SVG */
+        .pixel-icon {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
